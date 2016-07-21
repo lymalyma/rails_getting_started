@@ -4,3 +4,4 @@ require 'rake'
 Rake.application.run
 article GET    /articles/:id(.:format)      articles#show
 articles GET    /articles(.:format)          articles#index
+DELETE /articles/:id(.:format)      articles#destroy
