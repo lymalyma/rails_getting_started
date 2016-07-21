@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require_relative '../config/boot'
+require 'rake'
+Rake.application.run
+article GET    /articles/:id(.:format)      articles#show
+articles GET    /articles(.:format)          articles#index
