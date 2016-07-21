@@ -896,3 +896,115 @@ Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-07-21 09:06:44 -0500
+
+
+Started GET "/" for ::1 at 2016-07-21 11:01:35 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 828ms (Views: 818.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for ::1 at 2016-07-21 11:01:36 -0500
+Processing by ArticlesController#new as HTML
+  Rendered articles/new.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 51ms (Views: 44.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/articles" for ::1 at 2016-07-21 11:01:45 -0500
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cAO7pSavw+IgzcfOzsaW9ZxQ62OIX1eda1k1iCXEc1cSPbOVsd8VQgtalM5Tozhaww15oSHbTxV5v+xyMD2D5A==", "article"=>{"title"=>"Artcile 5", "text"=>"Hello drone!"}, "commit"=>"Save Article"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Artcile 5"], ["text", "Hello drone!"], ["created_at", "2016-07-21 16:01:45.791945"], ["updated_at", "2016-07-21 16:01:45.791945"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/articles/5
+Completed 302 Found in 8ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/articles/5" for ::1 at 2016-07-21 11:01:45 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered articles/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 25ms (Views: 17.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/5/edit" for ::1 at 2016-07-21 11:01:48 -0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered articles/edit.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 61ms (Views: 60.2ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/articles/5" for ::1 at 2016-07-21 11:01:53 -0500
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fp6w882nMT7zkHrqm+Aph1eNaRLZ1Z4RNZqbdcWybm8coLjDWtfnntgHKeoGhYcoCND70HBRhpknfEKP0Eue3A==", "article"=>{"title"=>"Artcile 5", "text"=>"Hello drone! Heeeyyyy!"}, "commit"=>"Save Article", "id"=>"5"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "articles" SET "text" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["text", "Hello drone! Heeeyyyy!"], ["updated_at", "2016-07-21 16:01:53.629613"], ["id", 5]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/articles/5
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/articles/5" for ::1 at 2016-07-21 11:01:53 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered articles/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles" for ::1 at 2016-07-21 11:01:55 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/5" for ::1 at 2016-07-21 11:01:58 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered articles/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-07-21 11:30:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 279ms (Views: 270.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for ::1 at 2016-07-21 11:30:12 -0500
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (17.2ms)
+  Rendered articles/new.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 45ms (Views: 40.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/articles" for ::1 at 2016-07-21 11:30:28 -0500
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uqZ+Y2nbUI/lAW5+/x/z6DKEREmLncQXLgF2mBlq+XHYmHZT/quGL86WPX5iel1HbdnWiyIZ3J88569iDJMJwg==", "article"=>{"title"=>"Article 6 ", "text"=>"This is an article"}, "commit"=>"Create Article"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Article 6 "], ["text", "This is an article"], ["created_at", "2016-07-21 16:30:28.720114"], ["updated_at", "2016-07-21 16:30:28.720114"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/articles/6
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/articles/6" for ::1 at 2016-07-21 11:30:28 -0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered articles/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 15.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for ::1 at 2016-07-21 11:30:49 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.2ms)
